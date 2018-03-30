@@ -233,32 +233,48 @@ public class Calculator {
 		btnEq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String result;
-				side2 = Screen.getText();
+				double side1d, side2d;
 				
-				double side1d = Double.parseDouble(side1);
-				double side2d = Double.parseDouble(side2);
+				if(operator.equals(null)) {
+					side2 = "0";
+				} else {
+					side2 = Screen.getText();
+				}
+				
+				side1d = Double.parseDouble(side1);
+				side2d = Double.parseDouble(side2);
 				
 				if (operator.equals("+")) {
 					Operation sum = new Sum(side1d, side2d);
 					result = sum.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("-")) {
 					Operation subtraction = new Subtract(side1d, side2d);
 					result = subtraction.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("*")) {
 					Operation multiply = new Multiply(side1d, side2d);
 					result = multiply.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("/")) {
 					Operation division = new Divide(side1d, side2d);
 					result = division.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("^")) {
 					Operation power = new Power(side1d, side2d);
 					result = power.operate();
 					Screen.setText(result);
-				} else if (side2.equals(null)) {
+					side1 = null;
+					side2 = null;
+				} else if (side1 == null && side2 == null) {
 					Screen.setText(input);
 				}
 			}
