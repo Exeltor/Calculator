@@ -193,15 +193,6 @@ public class Calculator {
 		btnDot.setBounds(100, 360, 61, 54);
 		frame.getContentPane().add(btnDot);
 		
-		JButton btnPlusMinus = new JButton("+-");
-		btnPlusMinus.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		btnPlusMinus.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnPlusMinus.setBounds(180, 360, 61, 54);
-		frame.getContentPane().add(btnPlusMinus);
-		
 		JButton btnMul = new JButton("*");
 		btnMul.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnMul.addActionListener(new ActionListener() {
@@ -280,12 +271,18 @@ public class Calculator {
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
+				} else if (operator.equals("Log")) {
+					Operation log = new Log(side1d, side2d);
+					result = log.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 				}
 			}
 		});
-		btnEq.setBounds(260, 360, 141, 54);
+		btnEq.setBounds(180, 360, 141, 54);
 		frame.getContentPane().add(btnEq);
 		
 		JButton btnBk = new JButton("BK");
@@ -354,5 +351,19 @@ public class Calculator {
 		});
 		btnRoot.setBounds(340, 80, 61, 54);
 		frame.getContentPane().add(btnRoot);
+		
+		JButton btnLog = new JButton("log");
+		btnLog.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnLog.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				side1 = Screen.getText();
+				operator = "Log";
+				input = "";
+				Screen.setText(input);
+				
+			}
+		});
+		btnLog.setBounds(340, 150, 61, 54);
+		frame.getContentPane().add(btnLog);
 	}
 }
