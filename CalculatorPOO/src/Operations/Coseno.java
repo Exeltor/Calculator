@@ -10,4 +10,8 @@ public class Coseno extends OperationSingle{
 		double operation = Math.cos(Math.toRadians(super.operand));
 		return Double.toString(operation);
 	}
+	
+	public String toString() {
+		return "cos(" + operand + ") = " + operate();
+	}
 }

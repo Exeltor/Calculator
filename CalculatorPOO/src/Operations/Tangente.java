@@ -10,4 +10,8 @@ public class Tangente extends OperationSingle{
 		double operation = Math.tan(Math.toRadians(super.operand));
 		return Double.toString(operation);
 	}
+	
+	public String toString() {
+		return "tg(" + operand + ") = " + operate();
+	}
 }
