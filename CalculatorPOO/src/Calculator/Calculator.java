@@ -235,6 +235,11 @@ public class Calculator {
 				String result;
 				side2 = Screen.getText();
 				
+				/** bugs
+				 * Si le das al igual con la pantalla vacia no pasa nada pero da error
+				 * Si le das al igual con un numero escrito en la pantalla sin operador da error
+				 */
+				
 				double side1d = Double.parseDouble(side1);
 				double side2d = Double.parseDouble(side2);
 				
@@ -242,22 +247,32 @@ public class Calculator {
 					Operation sum = new Sum(side1d, side2d);
 					result = sum.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("-")) {
 					Operation subtraction = new Subtract(side1d, side2d);
 					result = subtraction.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("*")) {
 					Operation multiply = new Multiply(side1d, side2d);
 					result = multiply.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("/")) {
 					Operation division = new Divide(side1d, side2d);
 					result = division.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("^")) {
 					Operation power = new Power(side1d, side2d);
 					result = power.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (operator.equals("\u221A")) {
 					Operation root = new Root(side1d, side2d);
 					result = root.operate();
