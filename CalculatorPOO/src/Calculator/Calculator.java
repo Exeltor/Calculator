@@ -365,5 +365,32 @@ public class Calculator {
 		});
 		btnLog.setBounds(340, 150, 61, 54);
 		frame.getContentPane().add(btnLog);
+		
+		JButton btnSin = new JButton("sn");
+		btnSin.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnSin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnSin.setBounds(340, 220, 61, 54);
+		frame.getContentPane().add(btnSin);
+		
+		JButton btnCos = new JButton("cs");
+		btnCos.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnCos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnCos.setBounds(340, 290, 61, 54);
+		frame.getContentPane().add(btnCos);
+		
+		JButton btnTn = new JButton("tg");
+		btnTn.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnTn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnTn.setBounds(340, 360, 61, 54);
+		frame.getContentPane().add(btnTn);
 	}
 }
