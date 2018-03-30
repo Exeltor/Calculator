@@ -1,13 +1,13 @@
 package Operations;
 
-public class Tangente extends Operation{
+public class Tangente extends OperationSingle{
 
-	public Tangente(double operand1, double operand2) {
-		super(operand1, operand2);
+	public Tangente(double operand) {
+		super(operand);
 	}
 	
 	public String operate() {
-		double operation = Math.tan(Math.toRadians(super.operand2));
+		double operation = Math.tan(Math.toRadians(super.operand));
 		return Double.toString(operation);
 	}
 }

@@ -1,6 +1,6 @@
 package Operations;
 
-public class Power extends Operation{
+public class Power extends OperationDouble{
 
 	public Power(double operand1, double operand2) {
 		super(operand1, operand2);

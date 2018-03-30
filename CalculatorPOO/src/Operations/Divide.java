@@ -1,6 +1,6 @@
 package Operations;
 
-public class Divide extends Operation{
+public class Divide extends OperationDouble{
 
 	public Divide(double operand1, double operand2) {
 		super(operand1, operand2);

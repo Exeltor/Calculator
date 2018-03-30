@@ -235,62 +235,62 @@ public class Calculator {
 				double side2d = Double.parseDouble(side2);
 				
 				if (operator.equals("+")) {
-					Operation sum = new Sum(side1d, side2d);
+					OperationDouble sum = new Sum(side1d, side2d);
 					result = sum.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("-")) {
-					Operation subtraction = new Subtract(side1d, side2d);
+					OperationDouble subtraction = new Subtract(side1d, side2d);
 					result = subtraction.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("*")) {
-					Operation multiply = new Multiply(side1d, side2d);
+					OperationDouble multiply = new Multiply(side1d, side2d);
 					result = multiply.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("/")) {
-					Operation division = new Divide(side1d, side2d);
+					OperationDouble division = new Divide(side1d, side2d);
 					result = division.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("^")) {
-					Operation power = new Power(side1d, side2d);
+					OperationDouble power = new Power(side1d, side2d);
 					result = power.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 
 				} else if (operator.equals("\u221A")) {
-					Operation root = new Root(side1d, side2d);
+					OperationDouble root = new Root(side1d, side2d);
 					result = root.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("Log")) {
-					Operation log = new Log(side1d, side2d);
+					OperationDouble log = new Log(side1d, side2d);
 					result = log.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("sn")) {
-					Operation sn = new Seno(side1d, side2d);
+					OperationSingle sn = new Seno(side2d);
 					result = sn.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("cs")) {
-					Operation cs = new Coseno(side1d, side2d);
+					OperationSingle cs = new Coseno(side2d);
 					result = cs.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("tn")) {
-					Operation tn = new Tangente(side1d, side2d);
+					OperationSingle tn = new Tangente(side2d);
 					result = tn.operate();
 					Screen.setText(result);
 					side1 = null;

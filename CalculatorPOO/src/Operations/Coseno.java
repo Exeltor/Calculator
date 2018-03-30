@@ -1,13 +1,13 @@
 package Operations;
 
-public class Coseno extends Operation{
+public class Coseno extends OperationSingle{
 
-	public Coseno(double operand1, double operand2) {
-		super(operand1, operand2);
+	public Coseno(double operand) {
+		super(operand);
 	}
 	
 	public String operate() {
-		double operation = Math.cos(Math.toRadians(super.operand2));
+		double operation = Math.cos(Math.toRadians(super.operand));
 		return Double.toString(operation);
 	}
 }

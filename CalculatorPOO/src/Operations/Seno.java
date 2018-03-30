@@ -1,13 +1,13 @@
 package Operations;
 
-public class Seno extends Operation{
+public class Seno extends OperationSingle{
 
-	public Seno(double operand1, double operand2) {
-		super(operand1, operand2);
+	public Seno(double operand) {
+		super(operand);
 	}
 
 	public String operate() {
-		double operation = Math.sin(Math.toRadians(super.operand2));
+		double operation = Math.sin(Math.toRadians(super.operand));
 		return Double.toString(operation);
 	}
 
