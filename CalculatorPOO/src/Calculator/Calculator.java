@@ -235,6 +235,11 @@ public class Calculator {
 				String result;
 				side2 = Screen.getText();
 				
+				/** bugs
+				 * Si le das al igual con la pantalla vacia no pasa nada pero da error
+				 * Si le das al igual con un numero escrito en la pantalla sin operador da error
+				 */
+				
 				double side1d = Double.parseDouble(side1);
 				double side2d = Double.parseDouble(side2);
 				
