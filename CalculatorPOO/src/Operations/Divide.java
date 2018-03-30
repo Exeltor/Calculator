@@ -10,5 +10,9 @@ public class Divide extends OperationDouble{
 		double operation = super.operand1 / super.operand2;
 		return Double.toString(operation);
 	}
-
+	
+	public String toString() {
+		return operand1 + " / " + operand2 + " = " + operate();
+	}
+	
 }

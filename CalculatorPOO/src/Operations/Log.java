@@ -10,4 +10,8 @@ public class Log extends OperationDouble{
 		double operation = Math.log(super.operand2) / Math.log(super.operand1);
 		return Double.toString(operation);
 	}
+	
+	public String toString() {
+		return "Log" + operand1 + " (" + operand2 + ") = " + operate();
+	}
 }

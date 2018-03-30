@@ -11,4 +11,7 @@ public class Sum extends OperationDouble{
 		return Double.toString(operation);
 	}
 
+	public String toString() {
+		return operand1 + " + " + operand2 + " = " + operate();
+	}
 }
