@@ -49,14 +49,14 @@ public class Calculator {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 530);
+		frame.setBounds(100, 100, 430, 465);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JTextPane Screen = new JTextPane();
 		Screen.setFont(new Font("Tahoma", Font.PLAIN, 23));
 		Screen.setEditable(false);
-		Screen.setBounds(21, 21, 382, 46);
+		Screen.setBounds(20, 20, 381, 46);
 		frame.getContentPane().add(Screen);
 		
 		JButton btn7 = new JButton("7");
@@ -67,7 +67,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn7.setBounds(21, 152, 61, 54);
+		btn7.setBounds(20, 150, 61, 54);
 		frame.getContentPane().add(btn7);
 		
 		JButton btn8 = new JButton("8");
@@ -78,7 +78,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn8.setBounds(112, 152, 61, 54);
+		btn8.setBounds(100, 150, 61, 54);
 		frame.getContentPane().add(btn8);
 		
 		JButton btn9 = new JButton("9");
@@ -89,7 +89,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn9.setBounds(210, 152, 61, 54);
+		btn9.setBounds(180, 150, 61, 54);
 		frame.getContentPane().add(btn9);
 		
 		JButton btnSub = new JButton("-");
@@ -102,7 +102,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnSub.setBounds(311, 152, 61, 54);
+		btnSub.setBounds(260, 150, 61, 54);
 		frame.getContentPane().add(btnSub);
 		
 		JButton btn4 = new JButton("4");
@@ -113,7 +113,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn4.setBounds(21, 227, 61, 54);
+		btn4.setBounds(20, 220, 61, 54);
 		frame.getContentPane().add(btn4);
 		
 		JButton btn5 = new JButton("5");
@@ -124,7 +124,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn5.setBounds(112, 227, 61, 54);
+		btn5.setBounds(100, 220, 61, 54);
 		frame.getContentPane().add(btn5);
 		
 		JButton btn6 = new JButton("6");
@@ -135,7 +135,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn6.setBounds(210, 227, 61, 54);
+		btn6.setBounds(180, 220, 61, 54);
 		frame.getContentPane().add(btn6);
 		
 		JButton btn1 = new JButton("1");
@@ -146,7 +146,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn1.setBounds(21, 302, 61, 54);
+		btn1.setBounds(20, 290, 61, 54);
 		frame.getContentPane().add(btn1);
 		
 		JButton btn2 = new JButton("2");
@@ -157,7 +157,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn2.setBounds(112, 302, 61, 54);
+		btn2.setBounds(100, 290, 61, 54);
 		frame.getContentPane().add(btn2);
 		
 		JButton btn3 = new JButton("3");
@@ -168,7 +168,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn3.setBounds(210, 302, 61, 54);
+		btn3.setBounds(180, 290, 61, 54);
 		frame.getContentPane().add(btn3);
 		
 		JButton btn0 = new JButton("0");
@@ -179,7 +179,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btn0.setBounds(21, 377, 61, 54);
+		btn0.setBounds(20, 360, 61, 54);
 		frame.getContentPane().add(btn0);
 		
 		JButton btnDot = new JButton(".");
@@ -190,7 +190,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnDot.setBounds(112, 377, 61, 54);
+		btnDot.setBounds(100, 360, 61, 54);
 		frame.getContentPane().add(btnDot);
 		
 		JButton btnPlusMinus = new JButton("+-");
@@ -199,7 +199,7 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnPlusMinus.setBounds(210, 377, 61, 54);
+		btnPlusMinus.setBounds(180, 360, 61, 54);
 		frame.getContentPane().add(btnPlusMinus);
 		
 		JButton btnMul = new JButton("*");
@@ -212,7 +212,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnMul.setBounds(311, 227, 61, 54);
+		btnMul.setBounds(260, 220, 61, 54);
 		frame.getContentPane().add(btnMul);
 		
 		JButton btnDiv = new JButton("/");
@@ -225,7 +225,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnDiv.setBounds(311, 302, 61, 54);
+		btnDiv.setBounds(260, 290, 61, 54);
 		frame.getContentPane().add(btnDiv);
 		
 		JButton btnEq = new JButton("=");
@@ -267,7 +267,7 @@ public class Calculator {
 				}
 			}
 		});
-		btnEq.setBounds(311, 377, 61, 54);
+		btnEq.setBounds(260, 360, 141, 54);
 		frame.getContentPane().add(btnEq);
 		
 		JButton btnBk = new JButton("BK");
@@ -282,7 +282,7 @@ public class Calculator {
 				}
 			}
 		});
-		btnBk.setBounds(21, 77, 61, 54);
+		btnBk.setBounds(20, 80, 61, 54);
 		frame.getContentPane().add(btnBk);
 		
 		JButton btnRes = new JButton("C");
@@ -293,7 +293,7 @@ public class Calculator {
 				Screen.setText("");
 			}
 		});
-		btnRes.setBounds(112, 77, 61, 54);
+		btnRes.setBounds(100, 80, 61, 54);
 		frame.getContentPane().add(btnRes);
 		
 		JButton btnPow = new JButton("^");
@@ -306,7 +306,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnPow.setBounds(210, 77, 61, 54);
+		btnPow.setBounds(180, 80, 61, 54);
 		frame.getContentPane().add(btnPow);
 		
 		JButton btnSum = new JButton("+");
@@ -320,7 +320,7 @@ public class Calculator {
 				
 			}
 		});
-		btnSum.setBounds(311, 77, 61, 54);
+		btnSum.setBounds(260, 80, 61, 54);
 		frame.getContentPane().add(btnSum);
 		
 		JButton btnRoot = new JButton("\u221A");
@@ -334,7 +334,7 @@ public class Calculator {
 				
 			}
 		});
-		btnRoot.setBounds(410, 77, 61, 54);
+		btnRoot.setBounds(340, 80, 61, 54);
 		frame.getContentPane().add(btnRoot);
 	}
 }
