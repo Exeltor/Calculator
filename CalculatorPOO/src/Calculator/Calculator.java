@@ -277,6 +277,24 @@ public class Calculator {
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
+				} else if (operator.equals("sn")) {
+					Operation sn = new Seno(side1d, side2d);
+					result = sn.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
+				} else if (operator.equals("cs")) {
+					Operation cs = new Coseno(side1d, side2d);
+					result = cs.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
+				} else if (operator.equals("tn")) {
+					Operation tn = new Tangente(side1d, side2d);
+					result = tn.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 				}
@@ -370,6 +388,10 @@ public class Calculator {
 		btnSin.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnSin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				side1 = "0";
+				operator = "sn";
+				input = "";
+				Screen.setText(input);
 			}
 		});
 		btnSin.setBounds(340, 220, 61, 54);
@@ -379,6 +401,10 @@ public class Calculator {
 		btnCos.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnCos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				side1 = "0";
+				operator = "cs";
+				input = "";
+				Screen.setText(input);
 			}
 		});
 		btnCos.setBounds(340, 290, 61, 54);
@@ -388,6 +414,10 @@ public class Calculator {
 		btnTn.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnTn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				side1 = "0";
+				operator = "tn";
+				input = "";
+				Screen.setText(input);
 			}
 		});
 		btnTn.setBounds(340, 360, 61, 54);
