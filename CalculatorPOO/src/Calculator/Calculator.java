@@ -352,7 +352,7 @@ public class Calculator {
 		btnRoot.setBounds(340, 80, 61, 54);
 		frame.getContentPane().add(btnRoot);
 		
-		JButton btnLog = new JButton("log");
+		JButton btnLog = new JButton("lg");
 		btnLog.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnLog.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
