@@ -253,7 +253,7 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				String result;
 				side2 = Screen.getText();
-				
+				Screen.setText(null);
 				/** bugs
 				 * Si le das al igual con la pantalla vacia no pasa nada pero da error
 				 * Si le das al igual con un numero escrito en la pantalla sin operador da error
@@ -265,6 +265,7 @@ public class Calculator {
 				if (operator.equals("+")) {
 					OperationDouble sum = new Sum(side1d, side2d);
 					result = sum.operate();
+					Screen.setText(null);
 					Screen.setText(result);
 					historyStr += " = " + result;
 					historyField.setText(historyStr);
@@ -330,8 +331,7 @@ public class Calculator {
 					OperationSingle sn = new Seno(side2d);
 					result = sn.operate();
 					Screen.setText(result);
-					historyStr += " = " + result;
-					historyField.setText(historyStr);
+					historyField.setText(sn.toString());
 					side1 = null;
 					side2 = null;
 					historyStr = Screen.getText();
@@ -339,8 +339,7 @@ public class Calculator {
 					OperationSingle cs = new Coseno(side2d);
 					result = cs.operate();
 					Screen.setText(result);
-					historyStr += " = " + result;
-					historyField.setText(historyStr);
+					historyField.setText(cs.toString());
 					side1 = null;
 					side2 = null;
 					historyStr = Screen.getText();
@@ -348,8 +347,7 @@ public class Calculator {
 					OperationSingle tn = new Tangente(side2d);
 					result = tn.operate();
 					Screen.setText(result);
-					historyStr += " = " + result;
-					historyField.setText(historyStr);
+					historyField.setText(tn.toString());
 					side1 = null;
 					side2 = null;
 					historyStr = Screen.getText();
