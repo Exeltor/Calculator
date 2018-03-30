@@ -2,15 +2,11 @@ package Calculator;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
 
-import Operations.Divide;
-import Operations.Multiply;
-import Operations.Operation;
-import Operations.Power;
-import Operations.Subtract;
-import Operations.Sum;
+import Operations.*;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -57,6 +53,7 @@ public class Calculator {
 		frame.getContentPane().setLayout(null);
 		
 		JTextPane Screen = new JTextPane();
+		Screen.setEditable(false);
 		Screen.setBounds(21, 21, 382, 46);
 		frame.getContentPane().add(Screen);
 		
@@ -217,6 +214,7 @@ public class Calculator {
 		JButton btnEq = new JButton("=");
 		btnEq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String result;
 				side2 = Screen.getText();
 				
 				double side1d = Double.parseDouble(side1);
@@ -224,23 +222,23 @@ public class Calculator {
 				
 				if (operator.equals("+")) {
 					Operation sum = new Sum(side1d, side2d);
-					String result = sum.operate();
+					result = sum.operate();
 					Screen.setText(result);
 				} else if (operator.equals("-")) {
 					Operation subtraction = new Subtract(side1d, side2d);
-					String result = subtraction.operate();
+					result = subtraction.operate();
 					Screen.setText(result);
 				} else if (operator.equals("*")) {
 					Operation multiply = new Multiply(side1d, side2d);
-					String result = multiply.operate();
+					result = multiply.operate();
 					Screen.setText(result);
 				} else if (operator.equals("/")) {
 					Operation division = new Divide(side1d, side2d);
-					String result = division.operate();
+					result = division.operate();
 					Screen.setText(result);
 				} else if (operator.equals("^")) {
 					Operation power = new Power(side1d, side2d);
-					String result = power.operate();
+					result = power.operate();
 					Screen.setText(result);
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
