@@ -258,6 +258,12 @@ public class Calculator {
 					Operation power = new Power(side1d, side2d);
 					result = power.operate();
 					Screen.setText(result);
+				} else if (operator.equals("\u221A")) {
+					Operation root = new Root(side1d, side2d);
+					result = root.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 				}
