@@ -234,6 +234,7 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				String result;
 				double side1d, side2d;
+				//parte sida
 				
 				if(operator.equals(null)) {
 					side2 = "0";
