@@ -258,6 +258,10 @@ public class Calculator {
 					Operation power = new Power(side1d, side2d);
 					result = power.operate();
 					Screen.setText(result);
+				} else if (operator.equals("\u221A")) {
+					Operation root = new Root(side1d, side2d);
+					result = root.operate();
+					Screen.setText(result);
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 				}
@@ -318,5 +322,19 @@ public class Calculator {
 		});
 		btnSum.setBounds(311, 77, 61, 54);
 		frame.getContentPane().add(btnSum);
+		
+		JButton btnRoot = new JButton("\u221A");
+		btnRoot.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnRoot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				side1 = Screen.getText();
+				operator = "\u221A";
+				input = "";
+				Screen.setText(input);
+				
+			}
+		});
+		btnRoot.setBounds(410, 77, 61, 54);
+		frame.getContentPane().add(btnRoot);
 	}
 }
