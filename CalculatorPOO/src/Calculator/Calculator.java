@@ -233,17 +233,10 @@ public class Calculator {
 		btnEq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String result;
-				double side1d, side2d;
-				//parte sida
+				side2 = Screen.getText();
 				
-				if(operator.equals(null)) {
-					side2 = "0";
-				} else {
-					side2 = Screen.getText();
-				}
-				
-				side1d = Double.parseDouble(side1);
-				side2d = Double.parseDouble(side2);
+				double side1d = Double.parseDouble(side1);
+				double side2d = Double.parseDouble(side2);
 				
 				if (operator.equals("+")) {
 					Operation sum = new Sum(side1d, side2d);
@@ -275,7 +268,7 @@ public class Calculator {
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
-				} else if (input.equals("")) {
+				} else if (side2.equals(null)) {
 					Screen.setText(input);
 				}
 			}
