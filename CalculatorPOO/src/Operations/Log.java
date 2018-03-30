@@ -1,6 +1,6 @@
 package Operations;
 
-public class Log extends Operation{
+public class Log extends OperationDouble{
 	
 	public Log( double operand1, double operand2) {
 		super(operand1, operand2);

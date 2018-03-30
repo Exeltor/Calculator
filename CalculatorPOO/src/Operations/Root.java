@@ -1,6 +1,6 @@
 package Operations;
 
-public class Root extends Operation{
+public class Root extends OperationDouble{
 	
 	public Root(double operand1, double operand2) {
 		super(operand1, operand2);
