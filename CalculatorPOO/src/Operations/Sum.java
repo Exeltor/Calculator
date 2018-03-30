@@ -1,6 +1,6 @@
 package Operations;
 
-public class Sum extends Operation{
+public class Sum extends OperationDouble{
 
 	public Sum(double operand1, double operand2) {
 		super(operand1, operand2);

@@ -1,6 +1,6 @@
 package Operations;
 
-public class Multiply extends Operation{
+public class Multiply extends OperationDouble{
 
 	public Multiply(double operand1, double operand2) {
 		super(operand1, operand2);

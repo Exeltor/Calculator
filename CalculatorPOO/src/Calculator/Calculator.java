@@ -193,15 +193,6 @@ public class Calculator {
 		btnDot.setBounds(100, 360, 61, 54);
 		frame.getContentPane().add(btnDot);
 		
-		JButton btnPlusMinus = new JButton("+-");
-		btnPlusMinus.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		btnPlusMinus.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnPlusMinus.setBounds(180, 360, 61, 54);
-		frame.getContentPane().add(btnPlusMinus);
-		
 		JButton btnMul = new JButton("*");
 		btnMul.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnMul.addActionListener(new ActionListener() {
@@ -244,38 +235,63 @@ public class Calculator {
 				double side2d = Double.parseDouble(side2);
 				
 				if (operator.equals("+")) {
-					Operation sum = new Sum(side1d, side2d);
+					OperationDouble sum = new Sum(side1d, side2d);
 					result = sum.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("-")) {
-					Operation subtraction = new Subtract(side1d, side2d);
+					OperationDouble subtraction = new Subtract(side1d, side2d);
 					result = subtraction.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("*")) {
-					Operation multiply = new Multiply(side1d, side2d);
+					OperationDouble multiply = new Multiply(side1d, side2d);
 					result = multiply.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("/")) {
-					Operation division = new Divide(side1d, side2d);
+					OperationDouble division = new Divide(side1d, side2d);
 					result = division.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("^")) {
-					Operation power = new Power(side1d, side2d);
+					OperationDouble power = new Power(side1d, side2d);
 					result = power.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
+
 				} else if (operator.equals("\u221A")) {
-					Operation root = new Root(side1d, side2d);
+					OperationDouble root = new Root(side1d, side2d);
 					result = root.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
+				} else if (operator.equals("Log")) {
+					OperationDouble log = new Log(side1d, side2d);
+					result = log.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
+				} else if (operator.equals("sn")) {
+					OperationSingle sn = new Seno(side2d);
+					result = sn.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
+				} else if (operator.equals("cs")) {
+					OperationSingle cs = new Coseno(side2d);
+					result = cs.operate();
+					Screen.setText(result);
+					side1 = null;
+					side2 = null;
+				} else if (operator.equals("tn")) {
+					OperationSingle tn = new Tangente(side2d);
+					result = tn.operate();
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
@@ -284,7 +300,7 @@ public class Calculator {
 				}
 			}
 		});
-		btnEq.setBounds(260, 360, 141, 54);
+		btnEq.setBounds(180, 360, 141, 54);
 		frame.getContentPane().add(btnEq);
 		
 		JButton btnBk = new JButton("BK");
@@ -353,5 +369,58 @@ public class Calculator {
 		});
 		btnRoot.setBounds(340, 80, 61, 54);
 		frame.getContentPane().add(btnRoot);
+		
+		JButton btnLog = new JButton("lg");
+		btnLog.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnLog.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				side1 = Screen.getText();
+				operator = "Log";
+				input = "";
+				Screen.setText(input);
+				
+			}
+		});
+		btnLog.setBounds(340, 150, 61, 54);
+		frame.getContentPane().add(btnLog);
+		
+		JButton btnSin = new JButton("sn");
+		btnSin.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnSin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				side1 = "0";
+				operator = "sn";
+				input = "";
+				Screen.setText(input);
+			}
+		});
+		btnSin.setBounds(340, 220, 61, 54);
+		frame.getContentPane().add(btnSin);
+		
+		JButton btnCos = new JButton("cs");
+		btnCos.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnCos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				side1 = "0";
+				operator = "cs";
+				input = "";
+				Screen.setText(input);
+			}
+		});
+		btnCos.setBounds(340, 290, 61, 54);
+		frame.getContentPane().add(btnCos);
+		
+		JButton btnTn = new JButton("tg");
+		btnTn.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		btnTn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				side1 = "0";
+				operator = "tn";
+				input = "";
+				Screen.setText(input);
+			}
+		});
+		btnTn.setBounds(340, 360, 61, 54);
+		frame.getContentPane().add(btnTn);
 	}
 }
