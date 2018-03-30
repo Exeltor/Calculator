@@ -270,6 +270,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("-")) {
 					OperationDouble subtraction = new Subtract(side1d, side2d);
 					result = subtraction.operate();
@@ -278,6 +279,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("*")) {
 					OperationDouble multiply = new Multiply(side1d, side2d);
 					result = multiply.operate();
@@ -286,6 +288,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("/")) {
 					OperationDouble division = new Divide(side1d, side2d);
 					result = division.operate();
@@ -294,6 +297,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("^")) {
 					OperationDouble power = new Power(side1d, side2d);
 					result = power.operate();
@@ -302,6 +306,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 
 				} else if (operator.equals("\u221A")) {
 					OperationDouble root = new Root(side1d, side2d);
@@ -311,6 +316,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("Log")) {
 					OperationDouble log = new Log(side1d, side2d);
 					result = log.operate();
@@ -319,6 +325,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("sn")) {
 					OperationSingle sn = new Seno(side2d);
 					result = sn.operate();
@@ -335,6 +342,7 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("tn")) {
 					OperationSingle tn = new Tangente(side2d);
 					result = tn.operate();
@@ -343,9 +351,11 @@ public class Calculator {
 					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 					historyField.setText(historyStr);
+					historyStr = "";
 				}
 			}
 		});
