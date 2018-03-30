@@ -263,7 +263,7 @@ public class Calculator {
 					result = root.operate();
 					Screen.setText(result);
 					side1 = null;
-					side2 = null;
+					side2 = null
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 				}
