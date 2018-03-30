@@ -7,7 +7,7 @@ public class Log extends Operation{
 	}
 	
 	public String operate() {
-		double operation = Math.log(super.operand1) / Math.log(super.operand2);
+		double operation = Math.log(super.operand2) / Math.log(super.operand1);
 		return Double.toString(operation);
 	}
 }
