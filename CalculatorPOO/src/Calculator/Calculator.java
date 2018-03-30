@@ -274,7 +274,7 @@ public class Calculator {
 					Screen.setText(result);
 					side1 = null;
 					side2 = null;
-				} else if (side1 == null && side2 == null) {
+				} else if (input.equals("")) {
 					Screen.setText(input);
 				}
 			}
