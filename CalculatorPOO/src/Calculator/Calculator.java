@@ -12,14 +12,18 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 
 public class Calculator {
 	
 	private String input = "";
+	private String historyStr = "";
 	private String side1, side2, operator;
 
 	private JFrame frame;
+	private JTextField historyField;
 
 	/**
 	 * Launch the application.
@@ -49,25 +53,36 @@ public class Calculator {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 430, 465);
+		frame.setBounds(100, 100, 434, 606);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JTextPane Screen = new JTextPane();
 		Screen.setFont(new Font("Tahoma", Font.PLAIN, 23));
 		Screen.setEditable(false);
-		Screen.setBounds(20, 20, 381, 46);
+		Screen.setBounds(21, 120, 381, 46);
 		frame.getContentPane().add(Screen);
+		
+		historyField = new JTextField();
+		historyField.setEditable(false);
+		historyField.setBounds(21, 50, 381, 60);
+		frame.getContentPane().add(historyField);
+		historyField.setColumns(10);
+		
+		JLabel lblHistory = new JLabel("Historial de Operaciones");
+		lblHistory.setBounds(21, 21, 237, 26);
+		frame.getContentPane().add(lblHistory);
 		
 		JButton btn7 = new JButton("7");
 		btn7.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "7";
+				historyStr += "7";
 				Screen.setText(input);
 			}
 		});
-		btn7.setBounds(20, 150, 61, 54);
+		btn7.setBounds(21, 250, 61, 54);
 		frame.getContentPane().add(btn7);
 		
 		JButton btn8 = new JButton("8");
@@ -75,10 +90,11 @@ public class Calculator {
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "8";
+				historyStr += "8";
 				Screen.setText(input);
 			}
 		});
-		btn8.setBounds(100, 150, 61, 54);
+		btn8.setBounds(101, 250, 61, 54);
 		frame.getContentPane().add(btn8);
 		
 		JButton btn9 = new JButton("9");
@@ -86,10 +102,11 @@ public class Calculator {
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "9";
+				historyStr += "9";
 				Screen.setText(input);
 			}
 		});
-		btn9.setBounds(180, 150, 61, 54);
+		btn9.setBounds(181, 250, 61, 54);
 		frame.getContentPane().add(btn9);
 		
 		JButton btnSub = new JButton("-");
@@ -99,10 +116,11 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "-";
 				input = "";
+				historyStr += " - ";
 				Screen.setText(input);
 			}
 		});
-		btnSub.setBounds(260, 150, 61, 54);
+		btnSub.setBounds(261, 250, 61, 54);
 		frame.getContentPane().add(btnSub);
 		
 		JButton btn4 = new JButton("4");
@@ -110,10 +128,11 @@ public class Calculator {
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "4";
+				historyStr += "4";
 				Screen.setText(input);
 			}
 		});
-		btn4.setBounds(20, 220, 61, 54);
+		btn4.setBounds(21, 320, 61, 54);
 		frame.getContentPane().add(btn4);
 		
 		JButton btn5 = new JButton("5");
@@ -121,10 +140,11 @@ public class Calculator {
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "5";
+				historyStr += "5";
 				Screen.setText(input);
 			}
 		});
-		btn5.setBounds(100, 220, 61, 54);
+		btn5.setBounds(101, 320, 61, 54);
 		frame.getContentPane().add(btn5);
 		
 		JButton btn6 = new JButton("6");
@@ -132,10 +152,11 @@ public class Calculator {
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "6";
+				historyStr += "6";
 				Screen.setText(input);
 			}
 		});
-		btn6.setBounds(180, 220, 61, 54);
+		btn6.setBounds(181, 320, 61, 54);
 		frame.getContentPane().add(btn6);
 		
 		JButton btn1 = new JButton("1");
@@ -143,10 +164,11 @@ public class Calculator {
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "1";
+				historyStr += "1";
 				Screen.setText(input);
 			}
 		});
-		btn1.setBounds(20, 290, 61, 54);
+		btn1.setBounds(21, 390, 61, 54);
 		frame.getContentPane().add(btn1);
 		
 		JButton btn2 = new JButton("2");
@@ -154,10 +176,11 @@ public class Calculator {
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "2";
+				historyStr += "2";
 				Screen.setText(input);
 			}
 		});
-		btn2.setBounds(100, 290, 61, 54);
+		btn2.setBounds(101, 390, 61, 54);
 		frame.getContentPane().add(btn2);
 		
 		JButton btn3 = new JButton("3");
@@ -165,10 +188,11 @@ public class Calculator {
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "3";
+				historyStr += "3";
 				Screen.setText(input);
 			}
 		});
-		btn3.setBounds(180, 290, 61, 54);
+		btn3.setBounds(181, 390, 61, 54);
 		frame.getContentPane().add(btn3);
 		
 		JButton btn0 = new JButton("0");
@@ -176,10 +200,11 @@ public class Calculator {
 		btn0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "0";
+				historyStr += "0";
 				Screen.setText(input);
 			}
 		});
-		btn0.setBounds(20, 360, 61, 54);
+		btn0.setBounds(21, 460, 61, 54);
 		frame.getContentPane().add(btn0);
 		
 		JButton btnDot = new JButton(".");
@@ -187,10 +212,11 @@ public class Calculator {
 		btnDot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += ".";
+				historyStr += ".";
 				Screen.setText(input);
 			}
 		});
-		btnDot.setBounds(100, 360, 61, 54);
+		btnDot.setBounds(101, 460, 61, 54);
 		frame.getContentPane().add(btnDot);
 		
 		JButton btnMul = new JButton("*");
@@ -200,10 +226,11 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "*";
 				input = "";
+				historyStr += " * ";
 				Screen.setText(input);
 			}
 		});
-		btnMul.setBounds(260, 220, 61, 54);
+		btnMul.setBounds(261, 320, 61, 54);
 		frame.getContentPane().add(btnMul);
 		
 		JButton btnDiv = new JButton("/");
@@ -213,10 +240,11 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "/";
 				input = "";
+				historyStr += " / ";
 				Screen.setText(input);
 			}
 		});
-		btnDiv.setBounds(260, 290, 61, 54);
+		btnDiv.setBounds(261, 390, 61, 54);
 		frame.getContentPane().add(btnDiv);
 		
 		JButton btnEq = new JButton("=");
@@ -238,69 +266,100 @@ public class Calculator {
 					OperationDouble sum = new Sum(side1d, side2d);
 					result = sum.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("-")) {
 					OperationDouble subtraction = new Subtract(side1d, side2d);
 					result = subtraction.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("*")) {
 					OperationDouble multiply = new Multiply(side1d, side2d);
 					result = multiply.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("/")) {
 					OperationDouble division = new Divide(side1d, side2d);
 					result = division.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("^")) {
 					OperationDouble power = new Power(side1d, side2d);
 					result = power.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 
 				} else if (operator.equals("\u221A")) {
 					OperationDouble root = new Root(side1d, side2d);
 					result = root.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("Log")) {
 					OperationDouble log = new Log(side1d, side2d);
 					result = log.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("sn")) {
 					OperationSingle sn = new Seno(side2d);
 					result = sn.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
 				} else if (operator.equals("cs")) {
 					OperationSingle cs = new Coseno(side2d);
 					result = cs.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (operator.equals("tn")) {
 					OperationSingle tn = new Tangente(side2d);
 					result = tn.operate();
 					Screen.setText(result);
+					historyStr += " = " + result;
+					historyField.setText(historyStr);
 					side1 = null;
 					side2 = null;
+					historyStr = "";
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
+					historyField.setText(historyStr);
+					historyStr = "";
 				}
 			}
 		});
-		btnEq.setBounds(180, 360, 141, 54);
+		btnEq.setBounds(181, 460, 141, 54);
 		frame.getContentPane().add(btnEq);
 		
 		JButton btnBk = new JButton("BK");
@@ -315,7 +374,7 @@ public class Calculator {
 				}
 			}
 		});
-		btnBk.setBounds(20, 80, 61, 54);
+		btnBk.setBounds(21, 180, 61, 54);
 		frame.getContentPane().add(btnBk);
 		
 		JButton btnRes = new JButton("C");
@@ -326,7 +385,7 @@ public class Calculator {
 				Screen.setText("");
 			}
 		});
-		btnRes.setBounds(100, 80, 61, 54);
+		btnRes.setBounds(101, 180, 61, 54);
 		frame.getContentPane().add(btnRes);
 		
 		JButton btnPow = new JButton("^");
@@ -339,7 +398,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnPow.setBounds(180, 80, 61, 54);
+		btnPow.setBounds(181, 180, 61, 54);
 		frame.getContentPane().add(btnPow);
 		
 		JButton btnSum = new JButton("+");
@@ -349,11 +408,12 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "+";
 				input = "";
+				historyStr += " + ";
 				Screen.setText(input);
 				
 			}
 		});
-		btnSum.setBounds(260, 80, 61, 54);
+		btnSum.setBounds(261, 180, 61, 54);
 		frame.getContentPane().add(btnSum);
 		
 		JButton btnRoot = new JButton("\u221A");
@@ -367,7 +427,7 @@ public class Calculator {
 				
 			}
 		});
-		btnRoot.setBounds(340, 80, 61, 54);
+		btnRoot.setBounds(341, 180, 61, 54);
 		frame.getContentPane().add(btnRoot);
 		
 		JButton btnLog = new JButton("lg");
@@ -381,7 +441,7 @@ public class Calculator {
 				
 			}
 		});
-		btnLog.setBounds(340, 150, 61, 54);
+		btnLog.setBounds(341, 250, 61, 54);
 		frame.getContentPane().add(btnLog);
 		
 		JButton btnSin = new JButton("sn");
@@ -394,7 +454,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnSin.setBounds(340, 220, 61, 54);
+		btnSin.setBounds(341, 320, 61, 54);
 		frame.getContentPane().add(btnSin);
 		
 		JButton btnCos = new JButton("cs");
@@ -407,7 +467,7 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnCos.setBounds(340, 290, 61, 54);
+		btnCos.setBounds(341, 390, 61, 54);
 		frame.getContentPane().add(btnCos);
 		
 		JButton btnTn = new JButton("tg");
@@ -420,7 +480,8 @@ public class Calculator {
 				Screen.setText(input);
 			}
 		});
-		btnTn.setBounds(340, 360, 61, 54);
+		btnTn.setBounds(341, 460, 61, 54);
 		frame.getContentPane().add(btnTn);
+		
 	}
 }
