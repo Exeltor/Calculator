@@ -277,6 +277,8 @@ public class Calculator {
 					Operation root = new Root(side1d, side2d);
 					result = root.operate();
 					Screen.setText(result);
+					side1 = null;
+					side2 = null;
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 				}
