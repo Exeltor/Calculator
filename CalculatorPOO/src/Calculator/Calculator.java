@@ -380,7 +380,7 @@ public class Calculator {
 				side2 = Screen.getText();
 				input = "";
 				/** bugs
-				 * Raices no funcionan correctamente
+				 * 
 				 **/
 			solveForOperator solver = new solveForOperator(operator, side1, side2);
 			

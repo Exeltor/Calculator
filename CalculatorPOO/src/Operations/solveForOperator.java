@@ -35,7 +35,7 @@ public class solveForOperator {
 			OperationDouble power = new Power(side1d, side2d);
 			history = power.toString();
 			return power.operate();
-		} else if (this.operator.equals("\\u221A")) {
+		} else if (this.operator.equals("\u221A")) {
 			OperationDouble root = new Root(side1d, side2d);
 			history = root.toString();
 			return root.operate();
