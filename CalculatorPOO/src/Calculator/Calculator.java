@@ -380,75 +380,17 @@ public class Calculator {
 				side2 = Screen.getText();
 				input = "";
 				/** bugs
-				 * Hay que mirar para las operaciones con una sola variable (sen, cos...) poder quitar el side1 de sus botones sin que de error
+				 * Raices no funcionan correctamente
 				 **/
+			solveForOperator solver = new solveForOperator(operator, side1, side2);
+			
+			Screen.setText(solver.solve());
+			historyField.setText(solver.toString());
+			
+			side1 = null;
+			side2 = null;
+			
 				
-				double side1d = Double.parseDouble(side1);
-				double side2d = Double.parseDouble(side2);
-				
-				if (operator.equals("+")) {
-					OperationDouble sum = new Sum(side1d, side2d);
-					Screen.setText(sum.operate());
-					historyField.setText(sum.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("-")) {
-					OperationDouble subtraction = new Subtract(side1d, side2d);
-					Screen.setText(subtraction.operate());
-					historyField.setText(subtraction.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("*")) {
-					OperationDouble multiply = new Multiply(side1d, side2d);
-					Screen.setText(multiply.operate());
-					historyField.setText(multiply.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("/")) {
-					OperationDouble division = new Divide(side1d, side2d);
-					Screen.setText(division.operate());
-					historyField.setText(division.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("^")) {
-					OperationDouble power = new Power(side1d, side2d);
-					Screen.setText(power.operate());
-					historyField.setText(power.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("\u221A")) {
-					OperationDouble root = new Root(side1d, side2d);
-					Screen.setText(root.operate());
-					historyField.setText(root.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("Log")) {
-					OperationDouble log = new Log(side1d, side2d);
-					Screen.setText(log.operate());
-					historyField.setText(log.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("sn")) {
-					OperationSingle sn = new Seno(side2d);
-					Screen.setText(sn.operate());
-					historyField.setText(sn.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("cs")) {
-					OperationSingle cs = new Coseno(side2d);
-					Screen.setText(cs.operate());
-					historyField.setText(cs.toString());
-					side1 = null;
-					side2 = null;
-				} else if (operator.equals("tn")) {
-					OperationSingle tn = new Tangente(side2d);
-					Screen.setText(tn.operate());
-					historyField.setText(tn.toString());
-					side1 = null;
-					side2 = null;
-				} else if (side2.equals(null)) {
-					Screen.setText(input);
-				}
 			}
 		});
 		btnEq.setBounds(181, 460, 141, 54);
