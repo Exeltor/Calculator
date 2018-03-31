@@ -10,5 +10,5 @@ public abstract class OperationDouble {
 	}
 	
 	public abstract String operate(); 
-
+	public abstract String toString();
 }

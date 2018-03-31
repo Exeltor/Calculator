@@ -10,4 +10,8 @@ public class Root extends OperationDouble{
 		double operation = Math.pow(operand2, 1 / operand1);
 		return Double.toString(operation);
 	}
+
+	public String toString() {
+		return operand1 + "\u221A" + "(" + operand2 + ") = " + operate();
+	}
 }

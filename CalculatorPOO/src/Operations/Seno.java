@@ -10,5 +10,8 @@ public class Seno extends OperationSingle{
 		double operation = Math.sin(Math.toRadians(super.operand));
 		return Double.toString(operation);
 	}
-
+	
+	public String toString() {
+		return "sen(" + operand + ") = " + operate();
+	}
 }

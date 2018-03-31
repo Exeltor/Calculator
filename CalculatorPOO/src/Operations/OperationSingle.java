@@ -9,5 +9,5 @@ public abstract class OperationSingle {
 	}
 	
 	public abstract String operate();
-
+	public abstract String toString();
 }

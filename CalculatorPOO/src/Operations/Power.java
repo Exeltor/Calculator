@@ -10,5 +10,8 @@ public class Power extends OperationDouble{
 		double operation = Math.pow(operand1, operand2);
 		return Double.toString(operation);
 	}
-
+	
+	public String toString() {
+		return operand1 + " ^ " + operand2 + " = " + operate();
+	}
 }
