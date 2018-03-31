@@ -7,8 +7,7 @@ public class Subtract extends OperationDouble{
 	}
 	
 	public String operate() {
-		double operation = super.operand1 - super.operand2;
-		return Double.toString(operation);
+		return Double.toString(super.operand1 - super.operand2);
 	}
 
 	public String toString() {

@@ -7,8 +7,7 @@ public class Tangente extends OperationSingle{
 	}
 	
 	public String operate() {
-		double operation = Math.tan(Math.toRadians(super.operand));
-		return Double.toString(operation);
+		return Double.toString(Math.tan(Math.toRadians(super.operand)));
 	}
 	
 	public String toString() {
