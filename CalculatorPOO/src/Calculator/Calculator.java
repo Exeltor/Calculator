@@ -78,7 +78,6 @@ public class Calculator {
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "7";
-				historyStr += "7";
 				Screen.setText(input);
 			}
 		});
@@ -90,7 +89,6 @@ public class Calculator {
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "8";
-				historyStr += "8";
 				Screen.setText(input);
 			}
 		});
@@ -102,7 +100,6 @@ public class Calculator {
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "9";
-				historyStr += "9";
 				Screen.setText(input);
 			}
 		});
@@ -116,7 +113,6 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "-";
 				input = "";
-				historyStr += " - ";
 				Screen.setText(input);
 			}
 		});
@@ -128,7 +124,6 @@ public class Calculator {
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "4";
-				historyStr += "4";
 				Screen.setText(input);
 			}
 		});
@@ -140,7 +135,6 @@ public class Calculator {
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "5";
-				historyStr += "5";
 				Screen.setText(input);
 			}
 		});
@@ -152,7 +146,6 @@ public class Calculator {
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "6";
-				historyStr += "6";
 				Screen.setText(input);
 			}
 		});
@@ -164,7 +157,6 @@ public class Calculator {
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "1";
-				historyStr += "1";
 				Screen.setText(input);
 			}
 		});
@@ -176,7 +168,6 @@ public class Calculator {
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "2";
-				historyStr += "2";
 				Screen.setText(input);
 			}
 		});
@@ -188,7 +179,6 @@ public class Calculator {
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "3";
-				historyStr += "3";
 				Screen.setText(input);
 			}
 		});
@@ -200,7 +190,6 @@ public class Calculator {
 		btn0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += "0";
-				historyStr += "0";
 				Screen.setText(input);
 			}
 		});
@@ -212,7 +201,6 @@ public class Calculator {
 		btnDot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				input += ".";
-				historyStr += ".";
 				Screen.setText(input);
 			}
 		});
@@ -226,7 +214,6 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "*";
 				input = "";
-				historyStr += " * ";
 				Screen.setText(input);
 			}
 		});
@@ -240,7 +227,6 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "/";
 				input = "";
-				historyStr += " / ";
 				Screen.setText(input);
 			}
 		});
@@ -251,9 +237,8 @@ public class Calculator {
 		btnEq.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnEq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String result;
 				side2 = Screen.getText();
-				Screen.setText(null);
+				input = "";
 				/** bugs
 				 * Si le das al igual con la pantalla vacia no pasa nada pero da error
 				 * Si le das al igual con un numero escrito en la pantalla sin operador da error
@@ -268,71 +253,60 @@ public class Calculator {
 					historyField.setText(sum.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("-")) {
 					OperationDouble subtraction = new Subtract(side1d, side2d);
 					Screen.setText(subtraction.operate());
 					historyField.setText(subtraction.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("*")) {
 					OperationDouble multiply = new Multiply(side1d, side2d);
 					Screen.setText(multiply.operate());
 					historyField.setText(multiply.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("/")) {
 					OperationDouble division = new Divide(side1d, side2d);
 					Screen.setText(division.operate());
 					historyField.setText(division.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("^")) {
 					OperationDouble power = new Power(side1d, side2d);
 					Screen.setText(power.operate());
 					historyField.setText(power.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
-
 				} else if (operator.equals("\u221A")) {
 					OperationDouble root = new Root(side1d, side2d);
 					Screen.setText(root.operate());
 					historyField.setText(root.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("Log")) {
 					OperationDouble log = new Log(side1d, side2d);
 					Screen.setText(log.operate());
 					historyField.setText(log.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("sn")) {
 					OperationSingle sn = new Seno(side2d);
 					Screen.setText(sn.operate());
 					historyField.setText(sn.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("cs")) {
 					OperationSingle cs = new Coseno(side2d);
 					Screen.setText(cs.operate());
 					historyField.setText(cs.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (operator.equals("tn")) {
 					OperationSingle tn = new Tangente(side2d);
 					Screen.setText(tn.operate());
 					historyField.setText(tn.toString());
 					side1 = null;
 					side2 = null;
-					historyStr = Screen.getText();
 				} else if (side2.equals(null)) {
 					Screen.setText(input);
 					historyField.setText(historyStr);
@@ -364,7 +338,6 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				input = "";
 				Screen.setText("");
-				historyStr = "";
 			}
 		});
 		btnRes.setBounds(101, 180, 61, 54);
@@ -390,7 +363,6 @@ public class Calculator {
 				side1 = Screen.getText();
 				operator = "+";
 				input = "";
-				historyStr += " + ";
 				Screen.setText(input);
 				
 			}
@@ -464,6 +436,5 @@ public class Calculator {
 		});
 		btnTn.setBounds(341, 460, 61, 54);
 		frame.getContentPane().add(btnTn);
-		
 	}
 }
