@@ -7,8 +7,7 @@ public class Power extends OperationDouble{
 	}
 	
 	public String operate() {
-		double operation = Math.pow(operand1, operand2);
-		return Double.toString(operation);
+		return Double.toString(Math.pow(operand1, operand2));
 	}
 	
 	public String toString() {

@@ -7,8 +7,7 @@ public class Root extends OperationDouble{
 	}
 	
 	public String operate() {
-		double operation = Math.pow(operand2, 1 / operand1);
-		return Double.toString(operation);
+		return Double.toString(Math.pow(operand2, 1 / operand1));
 	}
 
 	public String toString() {

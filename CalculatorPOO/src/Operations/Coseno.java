@@ -7,8 +7,7 @@ public class Coseno extends OperationSingle{
 	}
 	
 	public String operate() {
-		double operation = Math.cos(Math.toRadians(super.operand));
-		return Double.toString(operation);
+		return Double.toString(Math.cos(Math.toRadians(super.operand)));
 	}
 	
 	public String toString() {

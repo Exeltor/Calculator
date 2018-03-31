@@ -7,8 +7,7 @@ public class Seno extends OperationSingle{
 	}
 
 	public String operate() {
-		double operation = Math.sin(Math.toRadians(super.operand));
-		return Double.toString(operation);
+		return Double.toString(Math.sin(Math.toRadians(super.operand)));
 	}
 	
 	public String toString() {

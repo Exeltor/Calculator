@@ -61,7 +61,7 @@ public class Calculator {
 		frame.getContentPane().add(Screen);
 		
 		historyField = new JTextField();
-		historyField.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		historyField.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		historyField.setEditable(false);
 		historyField.setBounds(21, 50, 381, 60);
 		frame.getContentPane().add(historyField);
@@ -241,7 +241,6 @@ public class Calculator {
 				operator = "+";
 				input = "";
 				Screen.setText(input);
-				
 			}
 		});
 		btnSum.setBounds(261, 180, 61, 54);
@@ -312,7 +311,6 @@ public class Calculator {
 				operator = "\u221A";
 				input = "";
 				Screen.setText(input);
-				
 			}
 		});
 		btnRoot.setBounds(341, 180, 61, 54);
@@ -327,7 +325,6 @@ public class Calculator {
 				operator = "Log";
 				input = "";
 				Screen.setText(input);
-				
 			}
 		});
 		btnLog.setBounds(341, 250, 61, 54);
@@ -383,9 +380,8 @@ public class Calculator {
 				side2 = Screen.getText();
 				input = "";
 				/** bugs
-				 * Si le das al igual con la pantalla vacia no pasa nada pero da error
-				 * Si le das al igual con un numero escrito en la pantalla sin operador da error
-				 */
+				 * Hay que mirar para las operaciones con una sola variable (sen, cos...) poder quitar el side1 de sus botones sin que de error
+				 **/
 				
 				double side1d = Double.parseDouble(side1);
 				double side2d = Double.parseDouble(side2);
