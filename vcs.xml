@@ -6,6 +6,10 @@
           <option name="url" value="https://github.com/Exeltor/Calculator.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/Exeltor/Calendar.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\Alexe\IdeaProjects" />
