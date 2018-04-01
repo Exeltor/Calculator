@@ -396,6 +396,6 @@ public class Calculator {
 		btnEq.setBounds(181, 460, 141, 54);
 		frame.getContentPane().add(btnEq);
 
-		//comentario trial intelliJ
+		//comentario trial intelliJ xd
 	}
 }
